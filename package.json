@@ -1,6 +1,6 @@
 {
   "name": "willhaben",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/CP02A/willhaben.git"
   },
-  "author": "",
+  "author": "Christian Proschek",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CP02A/willhaben/issues"
