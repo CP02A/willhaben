@@ -16,4 +16,7 @@
     "url": "https://github.com/CP02A/willhaben/issues"
   },
   "homepage": "https://github.com/CP02A/willhaben#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
