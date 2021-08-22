@@ -10,9 +10,25 @@ exports.getListings = (url) => {
         fetch(url)
             .then(res => res.text())
             .then(string => {
-                const temp = string.substr(string.indexOf('window.tmsJson = '))
-                const result = temp.substr(17, temp.indexOf(';')-17)
-                res(JSON.parse(decodeURIComponent(JSON.parse(result).tmsData.search_results)))
+                const temp = string.substr(string.indexOf('<script id="__NEXT_DATA__" type="application/json">') + '<script id="__NEXT_DATA__" type="application/json">'.length)
+                const result = JSON.parse(temp.substr(0, temp.indexOf('</script>')))
+                const returnArray = []
+
+                result.props.pageProps.searchResult.advertSummaryList.advertSummary.forEach(returnObj => {
+                    returnObj.attributes.attribute.forEach(element => {
+                        returnObj[element.name.toLowerCase()] = isNaN(element.values[0]) ? element.values[0] : +element.values[0];
+                    })
+
+                    // delete useless keys
+                    delete returnObj.attributes
+                    delete returnObj.contextLinkList
+                    delete returnObj.advertiserInfo
+                    delete returnObj.advertImageList
+
+                    returnArray.push(returnObj)
+                })
+
+                res(returnArray)
             })
     })
 }
