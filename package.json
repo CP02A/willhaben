@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "devtest": "jenkins-mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "jenkins-mocha": "latest",
     "mocha": "^9.1.0"
   }
 }
