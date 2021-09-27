@@ -1,5 +1,8 @@
 const fetch = require('node-fetch')
 
+// Willhaben links: https://www.willhaben.at/robots.txt
+// Willhaben Marketplace Categories: https://www.willhaben.at/sitemap/sitemapindex-marktplatz-detail.xml
+
 exports.getListings = getListings
 
 /**
