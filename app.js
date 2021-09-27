@@ -99,4 +99,9 @@ class WillhabenSearch {
         this.searchPayLivery = paylivery
         return this
     }
+
+    keyword(keyword) {
+        this.searchKeyword = keyword
+        return this
+    }
 }
