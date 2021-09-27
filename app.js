@@ -38,3 +38,12 @@ function getListings(url) {
 const categories = Object.freeze({
 })
 exports.getCategories = categories
+
+const conditions = Object.freeze({
+    neu: 22,
+    gebraucht: 23,
+    defekt: 24,
+    neuwertig: 2546,
+    ausstellungsstueck: 2539
+})
+exports.getConditions = conditions
