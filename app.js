@@ -58,6 +58,7 @@ exports.new = () => new WillhabenSearch
 
 class WillhabenSearch {
     constructor(){
+        this.searchCount = 1000
         this.searchCategory = 0
     }
 
@@ -65,6 +66,13 @@ class WillhabenSearch {
         if(!Object.values(categories).includes(category) || !Number.isInteger(category))
             throw new Error('Invalid category! use .getCategories() on the imported module to get the available categories!')
         this.searchCategory = +category
+        return this
+    }
+
+    count(count) {
+        if(!Number.isInteger(count) || count < 1)
+            throw new Error('Count has to be a positive integer!')
+        this.searchCount = count
         return this
     }
 }
