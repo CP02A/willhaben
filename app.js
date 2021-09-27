@@ -53,6 +53,9 @@ const transferType = Object.freeze({
     versand: 2537
 })
 exports.transferType = transferType
+
+exports.new = () => new WillhabenSearch
+
 class WillhabenSearch {
     constructor(){
     }
