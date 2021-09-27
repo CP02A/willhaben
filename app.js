@@ -58,5 +58,13 @@ exports.new = () => new WillhabenSearch
 
 class WillhabenSearch {
     constructor(){
+        this.searchCategory = 0
+    }
+
+    category(category) {
+        if(!Object.values(categories).includes(category) || !Number.isInteger(category))
+            throw new Error('Invalid category! use .getCategories() on the imported module to get the available categories!')
+        this.searchCategory = +category
+        return this
     }
 }
