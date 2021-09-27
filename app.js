@@ -60,12 +60,20 @@ class WillhabenSearch {
     constructor(){
         this.searchCount = 1000
         this.searchCategory = 0
+        this.searchContition = []
     }
 
     category(category) {
         if(!Object.values(categories).includes(category) || !Number.isInteger(category))
             throw new Error('Invalid category! use .getCategories() on the imported module to get the available categories!')
         this.searchCategory = +category
+        return this
+    }
+
+    condition(condition) {
+        if(!Object.values(conditions).includes(+condition) || !Number.isInteger(condition))
+            throw new Error('Invalid condition! use .getConditions() on the imported module to get the available conditions!')
+        if(!this.searchContition.includes(+condition)) this.searchContition.push(+condition)
         return this
     }
 
