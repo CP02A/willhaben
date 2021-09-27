@@ -34,3 +34,7 @@ function getListings(url) {
             })
     })
 }
+
+const categories = Object.freeze({
+})
+exports.getCategories = categories
