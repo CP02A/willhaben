@@ -5,7 +5,9 @@ const fetch = require('node-fetch')
  * @param {string} url the URL
  * @returns {object} an array with all the listings
  */
-exports.getListings = (url) => {
+exports.getListings = getListings
+
+function getListings(url) {
     return new Promise((res, rej) => {
         fetch(url)
             .then(res => res.text())
