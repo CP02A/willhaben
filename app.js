@@ -62,6 +62,7 @@ class WillhabenSearch {
         this.searchCategory = 0
         this.searchContition = []
         this.searchTransferType = []
+        this.searchPayLivery = false
     }
 
     category(category) {
@@ -89,6 +90,13 @@ class WillhabenSearch {
         if(!Number.isInteger(count) || count < 1)
             throw new Error('Count has to be a positive integer!')
         this.searchCount = count
+        return this
+    }
+
+    paylivery(paylivery) {
+        if(typeof paylivery != 'boolean')
+            throw new Error('Paylivery can either be true of false!')
+        this.searchPayLivery = paylivery
         return this
     }
 }
