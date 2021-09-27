@@ -61,6 +61,7 @@ class WillhabenSearch {
         this.searchCount = 1000
         this.searchCategory = 0
         this.searchContition = []
+        this.searchTransferType = []
     }
 
     category(category) {
@@ -74,6 +75,13 @@ class WillhabenSearch {
         if(!Object.values(conditions).includes(+condition) || !Number.isInteger(condition))
             throw new Error('Invalid condition! use .getConditions() on the imported module to get the available conditions!')
         if(!this.searchContition.includes(+condition)) this.searchContition.push(+condition)
+        return this
+    }
+
+    transferType(transfer) {
+        if(!Object.values(transferTypes).includes(+transfer) || !Number.isInteger(transfer))
+            throw new Error('Invalid transfer type! use .getTransfers() on the imported module to get the available types!')
+        if(!this.searchTransferType.includes(+transfer)) this.searchTransferType.push(+transfer)
         return this
     }
 
