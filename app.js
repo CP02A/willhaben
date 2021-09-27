@@ -47,3 +47,9 @@ const conditions = Object.freeze({
     ausstellungsstueck: 2539
 })
 exports.getConditions = conditions
+
+const transferType = Object.freeze({
+    selbstabholung: 2536,
+    versand: 2537
+})
+exports.transferType = transferType
