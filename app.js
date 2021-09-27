@@ -56,7 +56,7 @@ const transferType = Object.freeze({
     selbstabholung: 2536,
     versand: 2537
 })
-exports.transferType = transferType
+exports.getTransferTypes = transferType
 
 exports.new = () => new WillhabenSearch
 
