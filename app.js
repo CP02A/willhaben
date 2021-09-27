@@ -1,12 +1,12 @@
 const fetch = require('node-fetch')
 
+exports.getListings = getListings
+
 /**
  * gets the listings from an URL
  * @param {string} url the URL
  * @returns {object} an array with all the listings
  */
-exports.getListings = getListings
-
 function getListings(url) {
     return new Promise((res, rej) => {
         fetch(url)
