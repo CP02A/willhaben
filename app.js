@@ -104,4 +104,8 @@ class WillhabenSearch {
         this.searchKeyword = keyword
         return this
     }
+
+    search() {
+        return getListings(`https://willhaben.at/iad/kaufen-und-verkaufen/marktplatz/-${this.searchCategory}?rows=${this.searchCount}${this.searchContition.length == 0 ? '' : '&treeAttributes=' + this.searchContition.join('&treeAttributes=')}${this.searchTransferType.length == 0 ? '' : '&treeAttributes=' + this.searchTransferType.join('&treeAttributes=')}${this.searchPayLivery ? '&paylivery=true' : ''}${this.searchKeyword ? `&keyword=${this.searchKeyword.split(' ').join('+')}` : ''}`)
+    }
 }
