@@ -40,7 +40,7 @@ There are constants for the categories, conditions, and transfer types. The cont
 ```javascript
 const willhaben = require('willhaben')
 
-console.log(willhaben.getCategories.grafikkarten
+console.log(willhaben.getCategories.grafikkarten)
 ```
 Property | Constant Description
 ------------ | -------------
@@ -59,7 +59,6 @@ willhaben.new()
     .count(1000) // default is 1000
     .category(willhaben.getCategories.grafikkarten)
     .search().then(json => {
-        console.log('test')
         console.log(json)
     })
 ```
